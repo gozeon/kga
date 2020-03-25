@@ -1,0 +1,35 @@
+{
+  "name": "iris",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gozeon/iris.git"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "keywords": [
+    "template",
+    "husky",
+    "prettier"
+  ],
+  "author": "goze",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gozeon/iris/issues"
+  },
+  "homepage": "https://github.com/gozeon/iris#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "husky": "^4.2.3",
+    "prettier": "^2.0.1",
+    "pretty-quick": "^2.0.1"
+  }
+}
