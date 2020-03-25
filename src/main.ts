@@ -52,4 +52,5 @@ class Kga {
   }
 }
 
-const app = new Kga(require('../package.json').name).run()
+const app = new Kga(require('../package.json').appName)
+app.run()

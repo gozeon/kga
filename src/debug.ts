@@ -5,7 +5,7 @@ import DebugLib from 'debug'
  * @example DEBUG='*'
  */
 export class Debug {
-  private _appName = require('../package.json').name
+  private _appName = require('../package.json').appName
   mainDebug = DebugLib(this._appName)
   debug: DebugLib.Debugger
   constructor(scope: string) {

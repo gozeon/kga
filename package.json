@@ -1,5 +1,6 @@
 {
-  "name": "kga",
+  "name": "@kga/cli",
+  "appName": "kga",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
