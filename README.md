@@ -1,4 +1,6 @@
-# no
+# Kga
+
+The King generator for all.
 
 # referece
 

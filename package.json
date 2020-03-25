@@ -1,14 +1,18 @@
 {
-  "name": "iris",
+  "name": "kga",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node build/main.js",
+    "clean": "rimraf build",
+    "start": "tsc --watch",
+    "tsc": "tsc",
+    "build": "run-s clean tsc"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gozeon/iris.git"
+    "url": "git+https://github.com/gozeon/kga.git"
   },
   "husky": {
     "hooks": {
@@ -23,13 +27,26 @@
   "author": "goze",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gozeon/iris/issues"
+    "url": "https://github.com/gozeon/kga/issues"
   },
-  "homepage": "https://github.com/gozeon/iris#readme",
-  "dependencies": {},
+  "homepage": "https://github.com/gozeon/kga#readme",
+  "dependencies": {
+    "command-line-args": "^5.1.1",
+    "cosmiconfig": "^6.0.0",
+    "debug": "^4.1.1",
+    "gulplog": "^1.0.0",
+    "lodash": "^4.17.15",
+    "typescript": "^3.8.3"
+  },
   "devDependencies": {
     "husky": "^4.2.3",
     "prettier": "^2.0.1",
-    "pretty-quick": "^2.0.1"
+    "pretty-quick": "^2.0.1",
+    "@types/command-line-args": "^5.0.0",
+    "@types/debug": "^4.1.5",
+    "@types/lodash": "^4.14.149",
+    "@types/node": "^13.9.4",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2"
   }
 }
