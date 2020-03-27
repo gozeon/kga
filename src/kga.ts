@@ -66,7 +66,7 @@ export class Kga {
 
     try {
       const pluginPath =
-        _.get(data, 'argvs.plugin') || _.get(data, 'config.config.plugin')
+        _.get(data, 'argvs.plugin') || _.get(data, 'fileConfig.config.plugin')
       const currentPluginPath = this._formatPluginPath(pluginPath, data.env.cwd)
       data.env.pluginFile = require.resolve(currentPluginPath)
       const Plugin = require(currentPluginPath)
