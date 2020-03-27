@@ -1,7 +1,7 @@
 {
   "name": "@kga/cli",
   "appName": "kga",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "build/plugin.js",
   "bin": {
