@@ -1,10 +1,11 @@
 import commandLineArgs from 'command-line-args'
+
 import { Debug } from './debug'
 
 /**
  * 解析命令行参数
  * @link: https://stackoverflow.com/questions/9725675/is-there-a-standard-format-for-command-line-shell-help-text
- * @TODO: 使用 https://github.com/substack/minimist
+ * @TODO: 使用 https://github.com/substack/minimist or 使用commandLineArgs转换一下
  */
 
 export class Arg {
@@ -35,6 +36,18 @@ export class Arg {
    * 获取命令行参数结果
    */
   getArgvs(): any {
-    return commandLineArgs(this.options)
+    return commandLineArgs(this.options, { partial: true })
+  }
+
+  /**
+   * 转换 process.argv
+   * @param options commandLineArgs.OptionDefinition[]
+   * @param argv string[]
+   */
+  formatOptions(
+    options: commandLineArgs.OptionDefinition[],
+    argv: string[]
+  ): any {
+    return commandLineArgs(options, { argv: argv, partial: true })
   }
 }
