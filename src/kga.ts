@@ -13,7 +13,7 @@ export interface KgaData {
   argvs: {
     [key: string]: string | boolean | any[]
   }
-  config: CosmiconfigResult
+  fileConfig: CosmiconfigResult
   env: {
     cwd: string
     argv: string[]
@@ -46,11 +46,11 @@ export class Kga {
     this._log.debug('starting...')
 
     const argvs = this.arg.getArgvs()
-    const config = this.config.getConfig()
+    const fileConfig = this.config.getConfig()
     let data: KgaData = _.assign(
       {},
       { argvs },
-      { config },
+      { fileConfig },
       {
         env: {
           cwd: process.cwd(),
@@ -132,13 +132,16 @@ export class Kga {
    * @param data KgaData
    */
   private _parseUnknownArgv(data: KgaData): KgaData {
-    const { config, env } = data
+    const { fileConfig, env } = data
     this._log.debug(`start parse unknown argvOptions...`)
-    this._log.debug(config?.config.argvOptions)
+    this._log.debug(fileConfig?.config.argvOptions)
     this._log.debug(env.argv)
 
-    if (_.isArray(config?.config.argvOptions)) {
-      const argvs = this.arg.formatOptions(config?.config.argvOptions, env.argv)
+    if (_.isArray(fileConfig?.config.argvOptions)) {
+      const argvs = this.arg.formatOptions(
+        fileConfig?.config.argvOptions,
+        env.argv
+      )
       data = _.merge(data, { argvs })
     }
     this._log.debug(`end parse unknown argvOptions...`)
