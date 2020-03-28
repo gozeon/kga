@@ -72,7 +72,7 @@ export class Kga {
       const Plugin = require(currentPluginPath)
       const pluginInstance = new Plugin(data)
 
-      // TODO: 下面可以使用范型进行简化
+      // TODO: 下面可以使用范型进行简化 or https://github.com/webpack/tapable
       // 检查实例 writing 方法
       if (Reflect.has(pluginInstance, 'writing')) {
         await pluginInstance.writing()
